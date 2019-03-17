@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lexani Grabber{% endblock %}
+
+{% block body %}
+    <header class="container">
+        <h1>Lexani Grabber</h1>
+    </header>
+    <div class="container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Status</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Preview</th>
+                <th scope="col">Video</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for video in videos %}
+            <tr>
+                <th scope="row">{{ video.id }}</th>
+                <td>{{ video.status }}</td>
+                <td>{{ video.videoTitle }}</td>
+                <td>{{ video.videoDescription }}</td>
+                <td><a href="{{ video.videoPreview }}">Preview</a></td>
+                <td><a href="{{ video.videoSource }}">Video</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
