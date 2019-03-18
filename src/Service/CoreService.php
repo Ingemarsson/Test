@@ -52,6 +52,9 @@ class CoreService {
                 'source'        =>  $value->getVideoSource(),
                 'description'   =>  $value->getVideoDescription(),
                 'preview'       =>  $value->getVideoPreview(),
+                'user-ip'       =>  $value->getUserIp(),
+                'user-agent'    =>  $value->getUserAgent()
+
             ];
             fputcsv($file, $export, '|');
         }

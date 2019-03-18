@@ -32,6 +32,7 @@ class VideoController extends AbstractController
             $em->persist($video);
             $compare = $this->getDoctrine()->getRepository(Video::class)->findBy(['video_source'=> $video->getVideoSource()]);
             $em->flush();
+            $em->clear();
         }
         $videos = $this->getDoctrine()->getRepository(Video::class)->findAll();
         $export = $service->initCSV($videos);
